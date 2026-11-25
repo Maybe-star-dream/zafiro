@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo — ZAFIRO</title>
+  <link rel="stylesheet" href="ccs/Colors.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="index.html" class="brand" aria-label="Inicio ZAFIRO">
+        <span class="brand-mark">Z</span>
+        <span class="brand-name">ZAFIRO</span>
+      </a>
+
+     <nav class="main-nav" aria-label="Navegacion principal">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      </nav>
+
+      <a href="carrito.html" class="cart-trigger" id="btn-ir-carrito">
+        Carrito (<span id="contador-header">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Colección ZAFIRO</p>
+        <h1>Catálogo de prendas y accesorios esenciales</h1>
+        <p class="hero-desc">
+          Explora nuestras 10 referencias disponibles en pesos colombianos (COP) y agrégalas
+          directamente a tu carrito de compras.
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div id="alerta-sistema" class="alert hidden" role="status" aria-live="polite"></div>
+    </div>
+
+    <section id="catalogo" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Nuestros productos</h2>
+          <p>Selecciona el artículo que desees añadir a tu pedido.</p>
+        </div>
+
+        <div id="catalogo-grid" class="products-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <b>ZAFIRO STORE</b>
+        <p>Moda y accesorios esenciales · Barranquilla, Colombia</p>
+      </div>
+      <div class="footer-contact">
+        <span>Contacto: zafiro@gmail.com</span>
+        <span>Tel: +57 (304) 357-2688</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/App.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito de Compras — ZAFIRO</title>
+  <link rel="stylesheet" href="ccs/Colors.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="index.html" class="brand" aria-label="Inicio ZAFIRO">
+        <span class="brand-mark">Z</span>
+        <span class="brand-name">ZAFIRO</span>
+      </a>
+<nav class="main-nav" aria-label="Navegacion principal">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <a href="carrito.html" class="cart-trigger" id="btn-ir-carrito">
+        Carrito (<span id="contador-header">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Tu pedido</p>
+        <h1>Carrito de compras</h1>
+        <p class="hero-desc">
+          Revisa los productos seleccionados, ajusta las cantidades y completa tus datos para simular tu compra.
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div id="alerta-sistema" class="alert hidden" role="status" aria-live="polite"></div>
+    </div>
+
+    <section id="carrito-seccion" class="section cart-section">
+      <div class="container">
+        <div class="cart-layout">
+          <div class="cart-items-box">
+            <div class="cart-top-bar">
+              <span>Unidades totales: <strong id="total-unidades">0</strong></span>
+              <button type="button" id="btn-vaciar-carrito" class="btn btn-danger-outline">
+                Vaciar carrito
+              </button>
+            </div>
+
+            <div id="carrito-items" class="cart-items-list"></div>
+            </div>
+
+            <aside class="cart-summary-box">
+            <h2>Resumen de compra</h2>
+
+            <dl class="summary-breakdown">
+              <div class="summary-row">
+                <dt>Subtotal productos</dt>
+                <dd id="subtotal-general">$0 COP</dd>
+              </div>
+              <div class="summary-row">
+                <dt>Costo de envío</dt>
+                <dd id="costo-envio">$0 COP</dd>
+              </div>
+              <div class="summary-row total-row">
+                <dt>Total a pagar</dt>
+                <dd id="total-pagar">$0 COP</dd>
+              </div>
+            </dl>
+
+            <form id="form-checkout" class="checkout-form" novalidate>
+              <h3>Datos para finalizar compra</h3>
+
+              <div class="form-group">
+                <label for="comprador-nombre">Nombre completo *</label>
+                <input
+                  type="text"
+                  id="comprador-nombre"
+                  name="nombre"
+                  placeholder="Ej. Laura Gómez"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="comprador-correo">Correo electrónico *</label>
+                <input
+                  type="email"
+                  id="comprador-correo"
+                  name="correo"
+                  placeholder="Ej. laura@correo.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="comprador-telefono">Teléfono *</label>
+                <input
+                  type="tel"
+                  id="comprador-telefono"
+                  name="telefono"
+                  placeholder="Ej. 3001234567"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="comprador-direccion">Dirección de entrega *</label>
+                <input
+                  type="text"
+                  id="comprador-direccion"
+                  name="direccion"
+                  placeholder="Ej. Cra 53 # 72-40, Barranquilla"
+                  required
+                />
+              </div>
+
+              <button type="submit" id="btn-finalizar-compra" class="btn btn-primary btn-full">
+                Finalizar compra
+              </button>
+            </form>
+
+            <div id="confirmacion-compra" class="confirmation-box hidden" role="status" aria-live="polite"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <strong>ZAFIRO STORE</strong>
+        <p>Moda y accesorios esenciales · Barranquilla, Colombia</p>
+      </div>
+      <div class="footer-contact">
+        <span>Contacto: zafiro@gmail.com</span>
+        <span>Tel: +57 (304) 357-2688</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/App.js"></script>
+</body>
+</html>

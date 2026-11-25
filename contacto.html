@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAFIRO</title>
+    <link rel="stylesheet" href="ccs/Colors.css"/>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — ZAFIRO</title>
+  <link rel="stylesheet" href="ccs/Colors.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="index.html" class="brand" aria-label="Inicio ZAFIRO">
+        <span class="brand-mark">Z</span>
+        <span class="brand-name">ZAFIRO</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegacion principal">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Atención al cliente</p>
+        <h1>Hablemos sobre tu pedido o estilo</h1>
+        <p class="hero-desc">
+          ¿Tienes dudas sobre tallas, envíos en Colombia o disponibilidad de alguna prenda?
+          Escríbenos y nuestro equipo te responderá con gusto.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cart-layout">
+        <aside class="cart-summary-box">
+          <h2>Canales directos</h2>
+          <p>Esencia y estilo atemporal, con atención cercana y oportuna.</p>
+
+          <dl class="summary-breakdown">
+            <div class="summary-row">
+              <dt>Correo electrónico</dt>
+              <dd>Zafiro@gmail.com</dd>
+            </div>
+            <div class="summary-row">
+              <dt>Teléfono / WhatsApp</dt>
+              <dd>+57 (304) 357-2688</dd>
+            </div>
+            <div class="summary-row">
+              <dt>Ubicación</dt>
+              <dd>Barranquilla, Atlántico · Colombia</dd>
+            </div>
+            <div class="summary-row">
+              <dt>Horario</dt>
+              <dd>Lun – Vie: 8:00 a. m. – 6:00 p. m.</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <div class="cart-items-box">
+          <h2>Envíanos un mensaje</h2>
+          <p>Completa el formulario y te daremos respuesta lo antes posible.</p>
+
+          <form id="form-contacto" class="checkout-form" novalidate>
+            <div class="form-group">
+              <label for="nombre-contacto">Nombre completo *</label>
+              <input
+                type="text"
+                id="nombre-contacto"
+                name="nombre"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="correo-contacto">Correo electrónico *</label>
+              <input
+                type="email"
+                id="correo-contacto"
+                name="correo"
+                placeholder="correo@ejemplo.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="telefono-contacto">Teléfono</label>
+              <input
+                type="tel"
+                id="telefono-contacto"
+                name="telefono"
+                placeholder="Ej. 3001234567"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="asunto-contacto">Asunto *</label>
+              <select id="asunto-contacto" name="asunto" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Información de productos">Información de productos</option>
+                <option value="Estado de pedido o envío">Estado de pedido o envío</option>
+                <option value="Cambios y tallas">Cambios y tallas</option>
+                <option value="Otro mensaje">Otro mensaje</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje-contacto">Mensaje *</label>
+              <textarea
+                id="mensaje-contacto"
+                name="mensaje"
+                rows="4"
+                placeholder="Cuéntanos en qué podemos ayudarte..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Enviar mensaje
+            </button>
+
+            <div id="mensaje-estado" class="confirmation-box hidden" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <strong>ZAFIRO STORE</strong>
+        <p>Moda y accesorios esenciales · Barranquilla, Colombia</p>
+      </div>
+      <div class="footer-contact">
+        <span>Contacto: zafiro@gmail.com</span>
+        <span>Tel: +57 (304) 357-2688</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const formContacto = document.getElementById("form-contacto");
+    const mensajeEstado = document.getElementById("mensaje-estado");
+
+    formContacto.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre-contacto").value.trim();
+      const correo = document.getElementById("correo-contacto").value.trim();
+      const asunto = document.getElementById("asunto-contacto").value.trim();
+      const mensaje = document.getElementById("mensaje-contacto").value.trim();
+
+      if (!nombre || !correo || !asunto || !mensaje) {
+        mensajeEstado.classList.remove("hidden");
+        mensajeEstado.textContent = "Por favor completa todos los campos obligatorios (*).";
+        return;
+      }
+
+      mensajeEstado.classList.remove("hidden");
+      mensajeEstado.innerHTML = `
+        <strong>¡Mensaje enviado!</strong> Gracias, <strong>${nombre}</strong>.
+        Recibimos tu consulta sobre <em>${asunto}</em> y responderemos a <strong>${correo}</strong>.
+      `;
+
+      formContacto.reset();
+    });
+  </script> 
+<script src="js/app.js"></script>    
+</body>
+</html>
